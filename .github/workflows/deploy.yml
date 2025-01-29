@@ -37,9 +37,9 @@ jobs:
             echo "Test-2 failed" && exit 2
           fi
 
-          # Test case 3:
+          # Test case 3: Out-of-range (-1)
           echo "Running Test-3: out-of-range (-1)"
-          echo -1 | ./fibo.sh > file.txt
+          echo -1 | ./fibo.sh | head -n 1 > file.txt
           if grep -q "Invalid input. Please enter a number between 0 and 500." file.txt; then
             echo "Test-3 passed"
           else
