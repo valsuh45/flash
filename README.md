@@ -1,3 +1,7 @@
+[![Fibonacci](https://github.com/Valsuh45/flash/actions/workflows/deploy.yml/badge.svg)](https://github.com/Valsuh45/flash/actions/workflows/deploy.yml)
+
+
+
 # Implementing Fibonacci sequence in a docker container
 
  The `Fibonacci sequence`, also known as Fibonacci numbers, is defined as the sequence of numbers in which each number in the sequence is equal to the sum of two numbers before it.
@@ -22,5 +26,3 @@ $ docker run -it <image/id>
 ```
 You will get a prompt, telling you to enter a number, once you enter a number a fibonacci sequence of that number will be displayed to you automatically.
 The container will be exited immidiately after the fibonacci sequence is displayed.
-
-

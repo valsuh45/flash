@@ -29,9 +29,8 @@ jobs:
           fi
 
           # Test case 2:
-          echo "Running Test-2: valid input (115)"
-          echo 115 | ./fibo.sh > file.txt 
-          if grep -q "483162952612010163284885" file.txt; then
+          echo 115 | ./fibo.sh | tail -n 1 > file.txt
+          if grep -q "115 = 483162952612010163284885" file.txt; then
             echo "Test-2 passed"
           else
             echo "Test-2 failed" && exit 2
