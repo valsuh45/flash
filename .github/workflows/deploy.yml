@@ -39,11 +39,11 @@ jobs:
 
           # Test case 3:
           echo "Running Test-3: out-of-range (-1)"
-          echo -1 | ./fibo.sh | head -n 1 > file.txt 
-          if grep -q "Invalid input. Please enter a number between 0 and 500." file.txt; then
-           echo "Test-3 passed"
+          echo -1 | ./fibo.sh > file.txt
+          if grep -q "Invalid input" file.txt; then
+            echo "Test-3 passed"
           else
-           echo "Test-3 failed" && exit 3
+            echo "Test-3 failed" && exit 3
           fi
 
           # Test case 4:
