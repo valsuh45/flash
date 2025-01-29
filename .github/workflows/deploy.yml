@@ -39,7 +39,7 @@ jobs:
 
           # Test case 3:
           echo "Running Test-3: out-of-range (-1)"
-          echo -1 | ./fibo.sh > file.txt 
+          echo "-1" | ./fibo.sh > file.txt 
           if grep -q "Invalid input" file.txt; then
             echo "Test-3 passed"
           else
@@ -57,7 +57,7 @@ jobs:
 
           # Test case 5: 
           echo "Running Test-5: Invalid Input (a)"
-          echo a | ./fibo.sh > file.txt
+          echo "a" | ./fibo.sh > file.txt
           if grep -q "Invalid input" file.txt; then
             echo "Test-5 passed"
           else
