@@ -1,4 +1,4 @@
-[![Fibonacci](https://github.com/Valsuh45/flash/actions/workflows/deploy.yml/badge.svg)](https://github.com/Valsuh45/flash/actions/workflows/deploy.yml)
+[![Fibonacci](https://github.com/valsuh45/flash/actions/workflows/deploy.yml/badge.svg)](https://github.com/valsuh45/flash/actions/workflows/deploy.yml)
 
 
 
