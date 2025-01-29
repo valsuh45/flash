@@ -13,6 +13,53 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      
+      - name: Test-Fibonacci
+        run: |
+          # Ensuring the script in executable
+          chmod +x fibo.sh
+
+          # Test case 1: 
+          echo "Running Test-1: valid input (30)"
+          echo 30 | ./fibo.sh > file.txt
+          if grep -q "832040" file.txt; then
+            echo "Test-1 passed"
+          else
+            echo "Test-1 failed" && exit 1
+          fi
+
+          # Test case 2:
+          echo "Running Test-2: valid input (115)"
+          echo 115 | ./fibo.sh > file.txt 
+          if grep -q "483162952612010163284885" file.txt; then
+            echo "Test-2 passed"
+          else
+            echo "Test-2 failed" && exit 2
+          fi
+
+          # Test case 3:
+          echo "Running Test-3: out-of-range (-1)"
+          if echo -1 | ./fibo.sh | grep -q "Invalid input"; then
+            echo "Test-3 passed"
+          else
+            echo "Test-3 failed" && exit 3
+          fi
+
+          # Test case 4:
+          echo "Running Test-4: out-of-range (501)"
+          if echo 501 | ./fibo.sh | grep -q "Invalid input"; then
+            echo "Test-4 passed"
+          else 
+            echo "Test-4 failed" && exit 4
+          fi
+
+          # Test case 5: 
+          echo "Running Test-5: Invalid Input (a)"
+          if echo a | ./fibo.sh | grep -q "Invalid input"; then
+            echo "Test-5 passed"
+          else
+            echo "Test-5 failed" && exit 5
+          fi
 
       - name: Login to container registry
         uses: docker/login-action@v2
